@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-
     <title>Blog</title>
     <body>
         @include('included.navbar')
-            <div class="container">
-                @yield('content')
-            </div>
+        <div class="container">
+            @include('included.messages')
+            @yield('content')
+        </div>
     </body>
 </html>

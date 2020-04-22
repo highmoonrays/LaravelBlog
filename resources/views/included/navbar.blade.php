@@ -1,9 +1,4 @@
-
-{{--            <a class="navbar-brand" href="{{ url('/') }}">--}}
-{{--                {{ config('app.name', 'Laravel') }}--}}
-
-
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Blog</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,6 +11,15 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{url('/services')}}">Services</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url('/posts')}}">Posts</a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url('/posts/create')}}">Create Post</a>
             </li>
         </ul>
     </div>
