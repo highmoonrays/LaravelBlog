@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Contracts\Support\Renderable;
 
 class DashboardController extends Controller
 {
@@ -19,10 +22,14 @@ class DashboardController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
-    public function index()
+    public function index(): Renderable
     {
-        return view('dashboard');
+        $user_id = auth()->user()->id;
+
+        $user = User::find($user_id);
+
+        return view('dashboard')->with('posts', $user->posts);
     }
 }
